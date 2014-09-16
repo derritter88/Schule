@@ -31,18 +31,43 @@ public class Student
 	{
 		try
 		{
-			for (int i = 0; i <= marks.length; i++)
+			int sum = 0;
+
+			for (int i = 0; i < marks.length; i++)
 			{
-				int a = marks[i];
-				int b = i+1;
-				float total = a+a;
-				total= total /b;
-				return  total;
+				sum += marks[i];
 			}
-		}
-		catch(Exception z)
+
+			return (float) sum / marks.length;
+		} catch (ArithmeticException ex)
 		{
 			System.out.println("Division durch Null.");
+			return 0;
 		}
+
+	}
+
+	public Object get(String string)
+	{
+		// TODO Auto-generated method stub
+		try
+		{
+			switch (string)
+			{
+			case "name":
+				return name;
+			case "birthyear":
+				return birthyear;
+			case "averageMarks":
+				return getAverageMark();
+			default:
+				throw new IllegalArgumentException();
+			}
+		} catch (IllegalArgumentException e)
+		{
+			System.out.println();
+			return "?";
+		}
+
 	}
 }
