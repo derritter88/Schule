@@ -1,65 +1,48 @@
+public class Student
+{
+	private String name;
+	private int birthyear;
+	private int[] marks = new int[10];
 
-public class Student {
+	public Student(String name, int birthyear, int[] marks)
+	{
+		super();
+		this.name = name;
+		this.birthyear = birthyear;
+		this.marks = marks;
+	}
 
-	String name;
-	int birthyear;
-	int [] Marks = new int [10];
-	int marks = 0;
-	int totalMarks = 0;
-	
-	
-	public String getName() {
+	public String getName()
+	{
 		return name;
 	}
 
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-
-	public int getBirthyear() {
+	public int getBirthyear()
+	{
 		return birthyear;
 	}
 
-
-
-	public void setBirthyear(int birthyear) {
-		this.birthyear = birthyear;
+	public int[] getMarks()
+	{
+		return marks;
 	}
 
-
-
-	public int[] getMarks() {
-		return Marks;
-	}
-
-
-
-	public void setMarks(int[] marks) {
-		Marks = marks;
-	}
-
-
-
-	public float getAverageMark()
+	float getAverageMark()
 	{
 		try
-		{/*int marks*/ / /*int number of marks*/
-			
-		 
-			return wert;
-		}
-		
-		catch (Exeption e)
 		{
-			return 0;
-			
+			for (int i = 0; i <= marks.length; i++)
+			{
+				int a = marks[i];
+				int b = i+1;
+				float total = a+a;
+				total= total /b;
+				return  total;
+			}
 		}
-		
-		
+		catch(Exception z)
+		{
+			System.out.println("Division durch Null.");
+		}
 	}
-	
 }
