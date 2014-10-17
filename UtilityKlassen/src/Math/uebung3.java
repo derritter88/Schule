@@ -26,6 +26,8 @@ public class uebung3
 		System.out.println("Erreichte Flughöhe:");
 		double y = v * t * Math.sin(Math.toRadians(a));
 		System.out.println(y + " m");
+
+		System.out.println("Test");
 	}
 
 }
