@@ -1,6 +1,6 @@
 package Tuerme_von_Hanoi;
 
-class Hanoi
+class tuerme
 {
 
 	static int counter; // Counter für die Kontrollstruktur (Anzahl der
@@ -31,7 +31,7 @@ class Hanoi
 
 	public static void main(String[] args) // Hauptprogramm
 	{
-		int n = (20); // Eingabe der Anzahl der Scheiben
+		int n = (25); // Eingabe der Anzahl der Scheiben
 		while (n <= 0)
 			; // Schleife bis keine Scheiben mehr auf dem quellPlatz sind
 		{
