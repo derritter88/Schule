@@ -4,14 +4,14 @@ public class Student
 {
 	String vName;
 	String nName;
-	int MatrNr;
+	int matrNr;
 
 	public Student(String vName, String nName, int matrNr)
 	{
 		super();
 		this.vName = vName;
 		this.nName = nName;
-		MatrNr = matrNr;
+		this.matrNr = matrNr;
 	}
 
 	public String getvName()
@@ -36,12 +36,18 @@ public class Student
 
 	public int getMatrNr()
 	{
-		return MatrNr;
+		return matrNr;
 	}
 
 	public void setMatrNr(int matrNr)
 	{
-		MatrNr = matrNr;
+		this.matrNr = matrNr;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Student [Vorname= " + vName + "; Nachname= " + nName + "; MatrNr= " + matrNr + "]";
 	}
 
 }
