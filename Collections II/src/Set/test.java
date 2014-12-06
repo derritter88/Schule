@@ -6,10 +6,12 @@ import java.util.TreeSet;
 public class test
 {
 
+	@SuppressWarnings(
+	{ "rawtypes", "unchecked" })
 	public static void main(String[] args)
 	{
 
-		TreeSet<Integer> hs = new TreeSet<Integer>();
+		TreeSet hs = new TreeSet();
 		int doppel = 0;
 
 		while (hs.size() < 3)
@@ -26,11 +28,10 @@ public class test
 			}
 
 		}
-		hs.descendingIterator();
-		Iterator<Integer> it = hs.iterator();
-
+		Iterator it = hs.descendingIterator();
 		while (it.hasNext())
 		{
+
 			System.out.println("Die Würfe waren: " + it.next());
 
 		}
@@ -38,5 +39,6 @@ public class test
 		{
 			System.out.println("Zahl mehrfach gewürfelt: " + doppel + "x");
 		}
+
 	}
 }
