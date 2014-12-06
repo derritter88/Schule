@@ -23,35 +23,32 @@ public class StudentReader
 	int readBirthyear()
 	{
 
-		do
+		try
 		{
-			try
-			{
-				System.out.println("Geburtsjahr eingeben:");
-				String s = scanner.next();
-				int birthday = Integer.parseInt(s);
-				GregorianCalendar cal = new GregorianCalendar();
-				cal.setTimeInMillis(System.currentTimeMillis());
-				cal.add(GregorianCalendar.YEAR, -birthday);
-				int diff = cal.get(GregorianCalendar.YEAR);
+			System.out.println("Geburtsjahr eingeben:");
+			String s = scanner.next();
+			int birthday = Integer.parseInt(s);
+			GregorianCalendar cal = new GregorianCalendar();
+			cal.setTimeInMillis(System.currentTimeMillis());
+			cal.add(GregorianCalendar.YEAR, -birthday);
+			int diff = cal.get(GregorianCalendar.YEAR);
 
-				if (diff > 110)
-				{
-					throw new TooOldException();
-				}
-
-				return birthday;
-
-			} catch (NumberFormatException error)
+			if (diff > 110)
 			{
-				System.out.println("Nur Zahlen erlaubt!");
-				return -1;
-			} catch (TooOldException ex)
-			{
-				System.out.println("Bitte Geburtsjahr ändern.");
-				return -1;
+				throw new TooOldException();
 			}
-		} while (readBirthyear() == -1);
+
+			return birthday;
+
+		} catch (NumberFormatException error)
+		{
+			System.out.println("Nur Zahlen erlaubt!");
+			return -1;
+		} catch (TooOldException ex)
+		{
+			System.out.println("Bitte Geburtsjahr ändern.");
+			return -1;
+		}
 
 	}
 
