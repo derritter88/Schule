@@ -1,6 +1,7 @@
 package Iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class test
 {
@@ -15,15 +16,21 @@ public class test
 
 		for (int y : al)
 		{
-			// System.out.println(y);
+			System.out.println(y);
 		}
 
-		for (int x : al)
+		Iterator it = al.listIterator();
+
+		while (it.hasNext())
 		{
-			int j = 2;
-			if (x % j == 0)
+			int x = (int) it.next();
+
+			if (x % 2 != 0)
 			{
-				al.remove(x);
+				it.remove();
+			} else if (it.hasNext())
+			{
+				System.out.println(it.next().toString());
 			}
 
 		}
